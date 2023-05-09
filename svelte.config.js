@@ -14,7 +14,7 @@ const config = {
 	// preprocess: vitePreprocess(),
 	preprocess: sveltePreprocess({
 		scss: {
-			prependData: `@import '${sassPath}_variables.scss';`
+			prependData: `@import '${sassPath}_variables.scss'; @import '${sassPath}breakpoints.scss';`
 		}
 	}),
 

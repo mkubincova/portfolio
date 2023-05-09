@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../styles/index.scss';
+	import '../styles/_index.scss';
 	import { page } from '$app/stores';
 	import { Header } from '$components';
 </script>
