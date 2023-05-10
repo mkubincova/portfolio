@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../styles/_index.scss';
+	import '../styles/_index.css';
 	import { page } from '$app/stores';
 	import { Header } from '$components';
 </script>
@@ -10,12 +10,12 @@
 
 <div id="app">
 	<Header />
-	<div class="content">
+	<div class="content mt-[48px] md:mt-[64px]">
 		<slot />
 	</div>
 </div>
 
-<style lang="scss">
+<!-- <style lang="scss">
 	#app {
 		min-height: 100vh;
 		display: flex;
@@ -25,4 +25,4 @@
 			flex: 1;
 		}
 	}
-</style>
+</style> -->

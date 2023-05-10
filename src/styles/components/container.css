@@ -1,0 +1,14 @@
+.container {
+	@apply mx-auto;
+	max-width: theme(maxWidth.7xl);
+}
+
+.container-sm {
+	@apply mx-auto;
+	max-width: theme(maxWidth.5xl);
+}
+
+.container-xsm {
+	@apply mx-auto;
+	max-width: theme(maxWidth.3xl);
+}

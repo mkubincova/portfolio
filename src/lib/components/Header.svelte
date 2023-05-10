@@ -17,41 +17,23 @@
 	];
 </script>
 
-<header>
-	<nav>
-		<ul class="menu-main">
+<header class="p-3 md:p-5 bg-slate-200 fixed top-0 left-0 right-0">
+	<nav class="flex justify-between gap-4 flex-wrap container">
+		<ul class="flex gap-4">
 			{#each mainMenu as item}
 				<li><a href={item.path}>{item.name}</a></li>
 			{/each}
 		</ul>
 
-		<div class="menu-contact">
-			<a href=""><Mail /> mkubincova@proton.me</a>
-			<a href=""><Github /></a>
-			<a href=""><Codepen /></a>
-			<a href=""><Linkedin /></a>
-		</div>
+		<ul class="flex gap-2 ml-auto">
+			<li>
+				<a href="mailto:mkubincova@proton.me" class="flex gap-1"
+					><Mail /> <span class="hidden md:block">mkubincova@proton.me</span></a
+				>
+			</li>
+			<li><a href="https://github.com/mkubincova"><Github /></a></li>
+			<li><a href="https://codepen.io/mkubincova"><Codepen /></a></li>
+			<li><a href="https://www.linkedin.com/in/mkubincova/"><Linkedin /></a></li>
+		</ul>
 	</nav>
 </header>
-
-<style lang="scss">
-	header {
-		background-color: #333;
-		padding: var(--gap);
-		nav {
-			display: flex;
-			align-items: center;
-			justify-content: space-between;
-			gap: var(--gap);
-		}
-	}
-	.menu-main,
-	.menu-contact {
-		display: flex;
-		align-items: center;
-		gap: var(--gap-sm);
-	}
-	a :global(svg) {
-		vertical-align: middle;
-	}
-</style>
