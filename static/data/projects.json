@@ -1,0 +1,131 @@
+[
+	{
+		"id": 1,
+		"name": "Project 1",
+		"cover": "https://picsum.photos/400/300",
+		"shortText": "lorem fdsaf ds lfsla dfjl gjkrlg rklag fjkg lrg alreg; rega ;l ggfgdfgdgfgf fgdgfdgdg",
+		"techStack": [
+			{
+				"name": "Svelte",
+				"icon": "/icons/svelte.svg"
+			},
+			{
+				"name": "MongoDB",
+				"icon": "/icons/mongo.svg"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"name": "Project 2",
+		"cover": "https://picsum.photos/400/300",
+		"techStack": [
+			{
+				"name": "Svelte",
+				"icon": "/icons/svelte.svg"
+			},
+			{
+				"name": "MongoDB",
+				"icon": "/icons/mongo.svg"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"name": "Project 3",
+		"cover": "https://picsum.photos/400/300",
+		"shortText": "lorem fdsaf ds lfsla dfjl gjkrlg rklag fjkg lrg alreg; rega ;l ggfgdfgdgfgf fgdgfdgdg",
+		"techStack": [
+			{
+				"name": "Svelte",
+				"icon": "/icons/svelte.svg"
+			}
+		]
+	},
+	{
+		"id": 1,
+		"name": "Project 1",
+		"cover": "https://picsum.photos/400/300",
+		"shortText": "lorem fdsaf ds lfsla dfjl gjkrlg rklag fjkg lrg alreg; rega ;l ggfgdfgdgfgf fgdgfdgdg",
+		"techStack": [
+			{
+				"name": "Svelte",
+				"icon": "/icons/svelte.svg"
+			},
+			{
+				"name": "MongoDB",
+				"icon": "/icons/mongo.svg"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"name": "Project 2",
+		"cover": "https://picsum.photos/400/300",
+		"techStack": [
+			{
+				"name": "Svelte",
+				"icon": "/icons/svelte.svg"
+			},
+			{
+				"name": "MongoDB",
+				"icon": "/icons/mongo.svg"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"name": "Project 3",
+		"cover": "https://picsum.photos/400/300",
+		"shortText": "lorem fdsaf ds lfsla dfjl gjkrlg rklag fjkg lrg alreg; rega ;l ggfgdfgdgfgf fgdgfdgdg",
+		"techStack": [
+			{
+				"name": "Svelte",
+				"icon": "/icons/svelte.svg"
+			}
+		]
+	},
+	{
+		"id": 1,
+		"name": "Project 1",
+		"cover": "https://picsum.photos/400/300",
+		"shortText": "lorem fdsaf ds lfsla dfjl gjkrlg rklag fjkg lrg alreg; rega ;l ggfgdfgdgfgf fgdgfdgdg",
+		"techStack": [
+			{
+				"name": "Svelte",
+				"icon": "/icons/svelte.svg"
+			},
+			{
+				"name": "MongoDB",
+				"icon": "/icons/mongo.svg"
+			}
+		]
+	},
+	{
+		"id": 2,
+		"name": "Project 2",
+		"cover": "https://picsum.photos/400/300",
+		"techStack": [
+			{
+				"name": "Svelte",
+				"icon": "/icons/svelte.svg"
+			},
+			{
+				"name": "MongoDB",
+				"icon": "/icons/mongo.svg"
+			}
+		]
+	},
+	{
+		"id": 3,
+		"name": "Project 3",
+		"cover": "https://picsum.photos/400/300",
+		"shortText": "lorem fdsaf ds lfsla dfjl gjkrlg rklag fjkg lrg alreg; rega ;l ggfgdfgdgfgf fgdgfdgdg",
+		"techStack": [
+			{
+				"name": "Svelte",
+				"icon": "/icons/svelte.svg"
+			}
+		]
+	}
+]
