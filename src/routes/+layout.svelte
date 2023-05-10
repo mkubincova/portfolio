@@ -15,7 +15,7 @@
 	</div>
 </div>
 
-<!-- <style lang="scss">
+<style lang="scss">
 	#app {
 		min-height: 100vh;
 		display: flex;
@@ -25,4 +25,4 @@
 			flex: 1;
 		}
 	}
-</style> -->
+</style>
