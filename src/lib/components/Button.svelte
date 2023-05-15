@@ -33,14 +33,14 @@
 	{...$$restProps}
 >
 	{#if $$slots.leftIcon}<span class="left-icon"><slot name="leftIcon" /></span>{/if}
-	<slot />
+	<slot>button</slot>
 	{#if $$slots.rightIcon}<span class="right-icon"><slot name="rightIcon" /></span>{/if}
 </svelte:element>
 
 <style lang="scss">
 	.btn {
 		display: inline-block;
-		border-radius: 20px;
+		border-radius: 50px;
 		cursor: pointer;
 		padding: 7px 15px;
 		text-decoration: none;
@@ -72,5 +72,16 @@
 				background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0 0);
 			}
 		}
+	}
+	.left-icon,
+	.right-icon {
+		display: inline-block;
+		vertical-align: text-bottom;
+	}
+	.left-icon {
+		margin-right: 5px;
+	}
+	.right-icon {
+		margin-left: 5px;
 	}
 </style>

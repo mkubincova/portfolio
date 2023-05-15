@@ -1,6 +1,6 @@
 <script lang="ts">
 	import photo from '$assets/photo.png';
-	import { MapPin } from 'lucide-svelte';
+	import { Download, MapPin } from 'lucide-svelte';
 	import type { PageData } from './$types';
 	import Button from '$components/Button.svelte';
 
@@ -30,7 +30,8 @@
 					variant="outline"
 					href="/books/a-great-book.pdf"
 					target="_blank"
-					className="mt-3">dowload CV</Button
+					className="mt-3"
+					>dowload CV <svelte:fragment slot="rightIcon"><Download /></svelte:fragment></Button
 				>
 			</div>
 			<div class="md:order-first"><img src={photo} alt="" class="max-w-xs" /></div>
