@@ -1,3 +1,4 @@
 :root {
-	--color-primary: theme(colors.teal.600);
+	--color-text: theme(colors.stone.950);
+	--color-text-inverse: theme(colors.stone.100);
 }

@@ -7,6 +7,4 @@
 @import './base/layout.css';
 
 /* custom components */
-@import './components/container.css';
-@import './components/button.css';
 @import './components/label.css';

@@ -1,15 +1,15 @@
-<article class="p-3 md:p-5">
+<script>
+	import { Button } from '$components';
+</script>
+
+<article class="p-3 md:p-5 bg-sky-700">
 	<section class="flex flex-col md:flex-row items-center justify-center">
 		<div>
-			<h1 class="text-6xl">Welcome!</h1>
-			<p class="text-base max-w-prose">
-				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea cum fugiat deleniti laborum
-				sapiente suscipit voluptatum corporis sint impedit magnam modi quia dicta reiciendis,
-				commodi ratione, officiis velit perferendis. Aut.
-			</p>
-			<div class="flex gap-2">
-				<a href="/projects" class="btn btn-primary mt-3">Check out my work</a>
-				<a href="/about" class="btn mt-3">About me</a>
+			<h1 class="text-5xl md:text-7xl">Hi, <br />I'm Magda</h1>
+			<p class="max-w-prose text-xl md:text-2xl">a full-stack web developer.</p>
+			<div class="flex flex-wrap gap-2 mt-3">
+				<Button element="a" variant="solid" href="/project">Check out my work</Button>
+				<Button element="a" variant="outline" href="/about">About me</Button>
 			</div>
 		</div>
 	</section>
