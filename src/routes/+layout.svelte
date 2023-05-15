@@ -10,9 +10,12 @@
 
 <div id="app">
 	<Header />
-	<div class="content mt-[48px] md:mt-[64px]">
+	<main>
 		<slot />
-	</div>
+	</main>
+	<footer class="p-3 text-xs">
+		<p>© Copyright {new Date().getFullYear()}. All rights reserved.</p>
+	</footer>
 </div>
 
 <style lang="scss">
@@ -21,8 +24,13 @@
 		display: flex;
 		flex-direction: column;
 
-		.content {
+		main {
 			flex: 1;
+			display: flex;
+		}
+		footer {
+			background-color: var(--color-text);
+			color: var(--color-text-inverse);
 		}
 	}
 </style>

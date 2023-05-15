@@ -63,13 +63,13 @@
 		&:hover {
 			&.btn-solid,
 			&.btn-outline {
-				background-image: linear-gradient(rgba(255, 255, 255, 0.1) 0 0);
+				background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0 0);
 			}
 		}
 		&:active {
 			&.btn-solid,
 			&.btn-outline {
-				background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0 0);
+				background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0 0);
 			}
 		}
 	}

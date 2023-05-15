@@ -16,6 +16,15 @@
 		}
 	];
 
+	// change header opacity
+	let header: HTMLHeadElement;
+	let headerOpacity = 0;
+
+	$: if (header) {
+		headerOpacity = scrollY / header.offsetHeight < 1 ? scrollY / header.offsetHeight : 1;
+	}
+
+	// show/hide header
 	let scrollY: number;
 	let prevScroll = 0;
 
@@ -53,11 +62,12 @@
 <svelte:window on:scroll={handleScroll} bind:scrollY />
 
 <header
-	class="site-header bg-slate-200 fixed top-0 left-0 right-0 z-10 transition-transform duration-200"
+	class="fixed top-0 left-0 right-0 z-10 transition-transform duration-200 p-3 md:p-5"
 	bind:clientHeight={headerHeight}
-	style={hide ? `transform: translateY(-${headerHeight}px)` : ''}
+	bind:this={header}
+	style="{hide ? `transform: translateY(-${headerHeight}px)` : ''};  --opacity: {headerOpacity};"
 >
-	<nav class="flex justify-between gap-4 flex-wrap container p-3 md:p-5">
+	<nav class="container flex justify-between gap-4 flex-wrap">
 		<ul class="flex gap-4">
 			{#each mainMenu as item}
 				<li><a href={item.path}>{item.name}</a></li>
@@ -76,3 +86,9 @@
 		</ul>
 	</nav>
 </header>
+
+<style>
+	header {
+		background: rgba(255, 255, 255, var(--opacity));
+	}
+</style>
