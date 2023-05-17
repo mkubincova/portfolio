@@ -1,4 +1,11 @@
 :root {
 	--color-text: theme(colors.stone.950);
 	--color-text-inverse: theme(colors.stone.100);
+	--outline-color: var(--color-text);
+
+	--menu-icon-w: 30px;
+	--menu-icon-line-h: 3px;
+
+	--header-color: var(var(--color-text));
+	--header-h-mobile: 46px;
 }

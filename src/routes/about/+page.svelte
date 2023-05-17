@@ -31,8 +31,8 @@
 					href="/books/a-great-book.pdf"
 					target="_blank"
 					className="mt-3"
-					>dowload CV <svelte:fragment slot="rightIcon"><Download /></svelte:fragment></Button
-				>
+					><svelte:fragment slot="leftIcon"><Download /></svelte:fragment>Dowload CV
+				</Button>
 			</div>
 			<div class="md:order-first"><img src={photo} alt="" class="max-w-xs" /></div>
 		</section>

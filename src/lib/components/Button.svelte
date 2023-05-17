@@ -33,16 +33,15 @@
 	{...$$restProps}
 >
 	{#if $$slots.leftIcon}<span class="left-icon"><slot name="leftIcon" /></span>{/if}
-	<slot>button</slot>
+	<slot />
 	{#if $$slots.rightIcon}<span class="right-icon"><slot name="rightIcon" /></span>{/if}
 </svelte:element>
 
 <style lang="scss">
 	.btn {
 		display: inline-block;
-		border-radius: 50px;
 		cursor: pointer;
-		padding: 7px 15px;
+		padding: 5px 10px;
 		text-decoration: none;
 		border: 2px solid var(--color-text);
 
