@@ -85,8 +85,6 @@
 				aspect-ratio: 1;
 				background-color: var(--color-text);
 				border-radius: 50%;
-				border: 2px solid hsla(189, 49%, 70%, 1);
-				box-shadow: inset 0 0 2px hsla(189, 49%, 40%, 1);
 			}
 		}
 	}
