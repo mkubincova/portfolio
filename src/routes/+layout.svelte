@@ -31,6 +31,7 @@
 		footer {
 			background-color: var(--color-text);
 			color: var(--color-text-inverse);
+			position: relative;
 		}
 	}
 </style>
