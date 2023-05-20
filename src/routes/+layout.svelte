@@ -27,6 +27,7 @@
 		main {
 			flex: 1;
 			display: flex;
+			flex-direction: column;
 		}
 		footer {
 			background-color: var(--color-text);

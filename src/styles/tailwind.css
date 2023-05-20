@@ -8,6 +8,8 @@
 	html {
 		font-family: 'Montserrat', sans-serif;
 		color: var(--color-text);
+		scroll-behavior: smooth;
+		background: var(--color-text-inverse);
 	}
 
 	*:focus-visible {

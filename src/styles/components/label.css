@@ -1,8 +1,0 @@
-.label {
-	@apply text-xs inline-block bg-gray-200 text-gray-700 rounded-sm px-2 py-1;
-}
-
-.label-primary {
-	background-color: var(--color-primary);
-	color: #fff;
-}

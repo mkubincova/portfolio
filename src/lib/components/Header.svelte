@@ -1,37 +1,77 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	const mainMenu: { path: string; name: string }[] = [
 		{
+			name: 'Home',
+			path: '#home'
+		},
+		{
 			name: 'About',
-			path: '/about'
+			path: '#about'
 		},
 		{
 			name: 'Projects',
-			path: '/projects'
+			path: '#projects'
 		},
 		{
 			name: 'Contact',
-			path: '/contact'
+			path: '#contact'
 		}
 	];
 
 	// change header opacity
 	let scrollY: number;
 	let header: HTMLHeadElement;
-	let headerOpacity = 0;
+	let headerOpacity = 1;
 
 	$: if (header) {
 		headerOpacity = scrollY / header.offsetHeight < 1 ? scrollY / header.offsetHeight : 1;
 	}
 
+	// show/hide mobile menu
 	function toggleNav() {
 		const body = document.querySelector('body');
 		body ? body.classList.toggle('offcanvas-open') : '';
 	}
+
+	// highlight current section
+	let articles: HTMLElement[] = [];
+	let prevId: string | null = 'home';
+	let currId: string | null = null;
+
+	// get all articles from menu
+	onMount(() => {
+		mainMenu.forEach((item) => {
+			if (item.path[0] === '#') {
+				let article = document.getElementById(`${item.path.substring(1)}`);
+				article && articles?.push(article);
+			}
+		});
+	});
+
+	function getCurrArticle() {
+		if (!articles) return;
+
+		for (let i = 0; i < articles.length; i++) {
+			let itemPositionY = articles[i].getBoundingClientRect().y;
+			if (
+				itemPositionY < header.offsetHeight &&
+				itemPositionY - header.offsetHeight > -articles[i].offsetHeight
+			) {
+				currId = articles[i].getAttribute('id');
+				break;
+			}
+		}
+
+		if (prevId === currId) return;
+		prevId = currId;
+		window.history.replaceState({}, '', `${window.location.pathname}#${currId}`);
+	}
 </script>
 
-<svelte:window bind:scrollY />
+<svelte:window bind:scrollY on:scroll={getCurrArticle} />
 
 <header
 	class="fixed top-0 left-0 right-0 z-10 p-2 md:px-5 transition-transform duration-200"
@@ -39,7 +79,8 @@
 	style="--opacity: {headerOpacity};"
 >
 	<nav class="container flex gap-x-4 gap-y-2 flex-wrap items-center">
-		<span class="flex-1"><a href="/" class="logo font-bold text-xl md:text-3xl">Magda.</a></span>
+		<span class="flex-1"><a href="#home" class="logo font-bold text-xl md:text-3xl">Magda.</a></span
+		>
 
 		<button id="toggle-nav" on:click={toggleNav} class="items-center gap-2">
 			<span class="is-closed text-sm">menu</span>
@@ -48,12 +89,12 @@
 		</button>
 
 		<ul class="site-menu flex gap-8 text-base">
-			{#each mainMenu as item}
-				<li>
-					<a href={item.path} class={$page.url.pathname === item.path ? 'active' : ''}
-						>{item.name}</a
-					>
-				</li>
+			{#each mainMenu as item, index}
+				{#if index > 0}
+					<li>
+						<a href={item.path} class={`#${currId}` === item.path ? 'active' : ''}>{item.name}</a>
+					</li>
+				{/if}
 			{/each}
 		</ul>
 
@@ -66,10 +107,19 @@
 <style lang="scss">
 	header {
 		background-color: rgba(255, 255, 255, var(--opacity));
+		box-shadow: 0 -5px 10px rgba(0, 0, 0, var(--opacity));
 
 		:global(.no-js) & {
-			background-color: rgb(255, 255, 255);
+			// background-color: rgb(255, 255, 255);
 		}
+
+		// &::before {
+		// 	content: '';
+		// 	position: absolute;
+		// 	inset: 0;
+		// 	background-color: var(--color-text-inverse);
+		// 	opacity: var(--opacity);
+		// }
 	}
 
 	nav a {
@@ -83,7 +133,6 @@
 
 		&.active {
 			background-size: 1em 2px;
-			font-weight: 500;
 		}
 
 		&:hover {
@@ -177,6 +226,7 @@
 
 			// open offcanvas menu
 			:global(body.offcanvas-open) {
+				overflow: hidden;
 				header {
 					--header-color: var(--color-text-inverse);
 					--outline-color: var(--color-text-inverse);

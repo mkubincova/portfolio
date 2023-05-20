@@ -1,6 +1,17 @@
 article {
 	flex: 1;
-	padding: calc(48px + theme(padding.3)) theme(padding.3) theme(padding.3);
+	padding: theme(padding.3);
+	min-height: 100vh;
+	box-sizing: border-box;
+	position: relative;
+}
+article:not(:first-of-type) {
+	padding-top: 64px;
+	margin-bottom: 64px;
+}
+article:last-of-type {
+	margin-bottom: 0;
+	padding-bottom: 64px;
 }
 
 .container {
@@ -11,10 +22,4 @@ article {
 .container-sm {
 	@apply mx-auto;
 	max-width: 960px;
-}
-
-@media (min-width: 768px) {
-	article {
-		padding: calc(64px + theme(padding.5)) theme(padding.5) theme(padding.5);
-	}
 }

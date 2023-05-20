@@ -5,6 +5,3 @@
 @import './base/heading.css';
 @import './base/link.css';
 @import './base/layout.css';
-
-/* custom components */
-@import './components/label.css';

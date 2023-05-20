@@ -60,22 +60,26 @@
 			cursor: not-allowed;
 		}
 		&:hover {
-			&.btn-solid,
-			&.btn-outline {
+			&.btn-solid {
 				background-image: linear-gradient(rgba(255, 255, 255, 0.2) 0 0);
+			}
+			&.btn-outline {
+				background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 0);
 			}
 		}
 		&:active {
-			&.btn-solid,
-			&.btn-outline {
+			&.btn-solid {
 				background-image: linear-gradient(rgba(255, 255, 255, 0.4) 0 0);
+			}
+			&.btn-outline {
+				background-image: linear-gradient(rgba(0, 0, 0, 0.4) 0 0);
 			}
 		}
 	}
 	.left-icon,
 	.right-icon {
 		display: inline-block;
-		vertical-align: text-bottom;
+		vertical-align: bottom;
 	}
 	.left-icon {
 		margin-right: 5px;
