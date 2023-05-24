@@ -1,6 +1,6 @@
 :root {
 	--color-text: theme(colors.stone.950);
-	--color-text-inverse: theme(colors.stone.100);
+	--color-text-inverse: #fff;
 	--outline-color: var(--color-text);
 
 	--menu-icon-w: 30px;
@@ -9,7 +9,7 @@
 	--header-color: theme(colors.stone.950);
 
 	--color-site-bkg: #efebe5;
-	--color-yellow: #fce46c;
+	--color-yellow: #fbe992;
 	--color-pink: #eda0a8;
 	--color-blue: #aac5fe;
 	--color-purple: #d2b6ff;

@@ -69,7 +69,7 @@
 <svelte:window bind:scrollY on:scroll={getCurrArticle} />
 
 <header
-	class="fixed top-0 left-0 right-0 z-10 p-3 transition-transform duration-200"
+	class="fixed top-0 left-0 right-0 p-3 transition-transform duration-200"
 	bind:this={header}
 	style="--opacity: {headerOpacity};"
 >
@@ -110,6 +110,7 @@
 	header {
 		background-color: rgba(255, 255, 255, var(--opacity));
 		box-shadow: 0 -5px 10px rgba(0, 0, 0, var(--opacity));
+		z-index: 1000;
 
 		:global(.no-js) & {
 			background-color: #fff;
@@ -185,9 +186,9 @@
 				transition: transform 0.3s ease-in-out;
 			}
 			.site-menu {
-				font-size: 2.5rem;
+				font-size: 2rem;
 				line-height: 1.5;
-				padding: 20% 0;
+				padding: 10% 0 5%;
 			}
 
 			#toggle-nav {

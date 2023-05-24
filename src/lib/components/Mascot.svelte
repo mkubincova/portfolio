@@ -25,7 +25,7 @@
 			<div class="eye" />
 		</div>
 	</div>
-	<svg class="ground" viewBox="0 0 1920 60" aria-hidden="true"
+	<svg class="ground" viewBox="0 0 1920 60" aria-hidden="true" style="transform: rotateY(180deg)"
 		><path
 			data-theme="softSecondary"
 			fill="var(--color-text)"
@@ -39,13 +39,14 @@
 		position: fixed;
 		bottom: 0;
 		width: 100vw;
+		z-index: 100;
 
 		.mascot {
 			position: absolute;
 			bottom: 0;
-			left: 80%;
+			right: 15%;
 			width: 60px;
-			height: 60px;
+			height: 70px;
 			background-color: var(--color-text);
 			border-radius: 15px 0 0 0;
 			transition: height 0.5s ease-in-out;
@@ -71,6 +72,7 @@
 				pointer-events: none;
 				border-radius: 50%;
 				box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+				border: 1px solid;
 
 				&::before {
 					content: '';
