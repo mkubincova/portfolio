@@ -6,6 +6,11 @@
 	--menu-icon-w: 30px;
 	--menu-icon-line-h: 3px;
 
-	--header-color: var(var(--color-text));
-	--header-h-mobile: 46px;
+	--header-color: theme(colors.stone.950);
+
+	--color-site-bkg: #efebe5;
+	--color-yellow: #fce46c;
+	--color-pink: #eda0a8;
+	--color-blue: #aac5fe;
+	--color-purple: #d2b6ff;
 }

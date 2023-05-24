@@ -1,7 +1,7 @@
 article {
 	flex: 1;
 	padding: theme(padding.3);
-	min-height: 100vh;
+	/* min-height: 100vh; */
 	box-sizing: border-box;
 	position: relative;
 }
@@ -16,10 +16,16 @@ article:last-of-type {
 
 .container {
 	@apply mx-auto;
-	max-width: 1280px;
+	max-width: 1200px;
 }
 
 .container-sm {
 	@apply mx-auto;
 	max-width: 960px;
+}
+
+img {
+	width: 100%;
+	height: auto;
+	box-sizing: border-box;
 }

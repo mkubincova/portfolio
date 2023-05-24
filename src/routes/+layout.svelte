@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../styles/_index.css';
 	import { page } from '$app/stores';
-	import { Header } from '$components';
+	import { Header, Mascot } from '$components';
 </script>
 
 <svelte:head>
@@ -14,8 +14,9 @@
 		<slot />
 	</main>
 	<footer class="p-3 text-xs">
-		<p>© Copyright {new Date().getFullYear()}. All rights reserved.</p>
+		<p class="container">© Copyright {new Date().getFullYear()}. All rights reserved.</p>
 	</footer>
+	<Mascot />
 </div>
 
 <style lang="scss">
@@ -23,16 +24,15 @@
 		min-height: 100vh;
 		display: flex;
 		flex-direction: column;
-
+		background-color: var(--color-site-bkg);
 		main {
 			flex: 1;
 			display: flex;
 			flex-direction: column;
 		}
+
 		footer {
-			background-color: var(--color-text);
-			color: var(--color-text-inverse);
-			position: relative;
+			padding-bottom: 40px;
 		}
 	}
 </style>

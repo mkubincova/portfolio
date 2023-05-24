@@ -1,5 +1,5 @@
 <script lang="ts">
-	import photo from '$assets/photo.png';
+	// import photo from '$assets/photo.png';
 	import { Download, MapPin } from 'lucide-svelte';
 	import Button from '$components/Button.svelte';
 	import Label from '$components/Label.svelte';
@@ -32,7 +32,7 @@
 				</Button>
 			</div>
 			<div class="order-first max-w-xs p-8">
-				<div class="img-frame"><img src={photo} alt="" /></div>
+				<!-- <div class="img-frame"><img src={photo} alt="" /></div> -->
 			</div>
 		</section>
 	</div>

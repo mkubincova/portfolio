@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 
 	const mainMenu: { path: string; name: string }[] = [
@@ -14,17 +13,13 @@
 		{
 			name: 'Projects',
 			path: '#projects'
-		},
-		{
-			name: 'Contact',
-			path: '#contact'
 		}
 	];
 
 	// change header opacity
 	let scrollY: number;
 	let header: HTMLHeadElement;
-	let headerOpacity = 1;
+	let headerOpacity = 0;
 
 	$: if (header) {
 		headerOpacity = scrollY / header.offsetHeight < 1 ? scrollY / header.offsetHeight : 1;
@@ -74,7 +69,7 @@
 <svelte:window bind:scrollY on:scroll={getCurrArticle} />
 
 <header
-	class="fixed top-0 left-0 right-0 z-10 p-2 md:px-5 transition-transform duration-200"
+	class="fixed top-0 left-0 right-0 z-10 p-3 transition-transform duration-200"
 	bind:this={header}
 	style="--opacity: {headerOpacity};"
 >
@@ -90,11 +85,18 @@
 
 		<ul class="site-menu flex gap-8 text-base">
 			{#each mainMenu as item, index}
-				{#if index > 0}
-					<li>
-						<a href={item.path} class={`#${currId}` === item.path ? 'active' : ''}>{item.name}</a>
-					</li>
-				{/if}
+				<li>
+					<a
+						href={item.path}
+						class={!currId
+							? index === 0
+								? 'active'
+								: ''
+							: `#${currId}` === item.path
+							? 'active'
+							: ''}>{item.name}</a
+					>
+				</li>
 			{/each}
 		</ul>
 
@@ -110,16 +112,9 @@
 		box-shadow: 0 -5px 10px rgba(0, 0, 0, var(--opacity));
 
 		:global(.no-js) & {
-			// background-color: rgb(255, 255, 255);
+			background-color: #fff;
+			box-shadow: 0 -5px 10px #000;
 		}
-
-		// &::before {
-		// 	content: '';
-		// 	position: absolute;
-		// 	inset: 0;
-		// 	background-color: var(--color-text-inverse);
-		// 	opacity: var(--opacity);
-		// }
 	}
 
 	nav a {
@@ -128,15 +123,23 @@
 		background-image: linear-gradient(currentColor, currentColor);
 		background-position: 0% 100%;
 		background-repeat: no-repeat;
-		background-size: 0% 2px;
+		background-size: 0% 0.15em;
 		transition: background-size 0.5s;
 
 		&.active {
-			background-size: 1em 2px;
+			background-size: 1em 0.15em;
+
+			:global(.no-js) & {
+				background-size: 0 0.15em;
+			}
 		}
 
 		&:hover {
-			background-size: 100% 2px;
+			background-size: 100% 0.15em;
+
+			:global(.no-js) & {
+				background-size: 100% 0.15em;
+			}
 		}
 
 		&.logo {
@@ -182,8 +185,9 @@
 				transition: transform 0.3s ease-in-out;
 			}
 			.site-menu {
-				font-size: 1.5rem;
+				font-size: 2.5rem;
 				line-height: 1.5;
+				padding: 20% 0;
 			}
 
 			#toggle-nav {

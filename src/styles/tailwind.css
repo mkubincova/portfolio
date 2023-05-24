@@ -17,3 +17,22 @@
 		outline-offset: 2px;
 	}
 }
+
+@layer utility {
+	.text-bkg-yellow {
+		background-color: var(--color-yellow);
+		padding: 0 0.15em;
+	}
+	.text-bkg-pink {
+		background-color: var(--color-pink);
+		padding: 0 0.15em;
+	}
+	.text-bkg-blue {
+		background-color: var(--color-blue);
+		padding: 0 0.15em;
+	}
+	.text-bkg-purple {
+		background-color: var(--color-purple);
+		padding: 0 0.15em;
+	}
+}
