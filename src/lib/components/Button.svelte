@@ -43,7 +43,7 @@
 		cursor: pointer;
 		padding: 5px 10px;
 		text-decoration: none;
-		border: 2px solid var(--color-text);
+		border: 3px solid var(--color-text);
 
 		&.btn-solid {
 			background-color: var(--color-text);

@@ -21,7 +21,7 @@
 		<div class="lg:w-1/4">
 			<div class="img-container">
 				<picture>
-					<source media="(min-width: 1124px)" srcset={photo} />
+					<source media="(min-width: 1024px)" srcset={photo} />
 					<img
 						src={photoSq}
 						alt=""

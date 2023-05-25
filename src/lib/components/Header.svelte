@@ -13,6 +13,10 @@
 		{
 			name: 'Projects',
 			path: '#projects'
+		},
+		{
+			name: 'Contact',
+			path: '#contact'
 		}
 	];
 
@@ -85,18 +89,20 @@
 
 		<ul class="site-menu flex gap-8 text-base">
 			{#each mainMenu as item, index}
-				<li>
-					<a
-						href={item.path}
-						class={!currId
-							? index === 0
+				{#if index !== 0}
+					<li>
+						<a
+							href={item.path}
+							class={!currId
+								? index === 0
+									? 'active'
+									: ''
+								: `#${currId}` === item.path
 								? 'active'
-								: ''
-							: `#${currId}` === item.path
-							? 'active'
-							: ''}>{item.name}</a
-					>
-				</li>
+								: ''}>{item.name}</a
+						>
+					</li>
+				{/if}
 			{/each}
 		</ul>
 

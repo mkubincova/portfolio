@@ -46,7 +46,7 @@
 			bottom: 0;
 			right: 15%;
 			width: 60px;
-			height: 70px;
+			height: 60px;
 			background-color: var(--color-text);
 			border-radius: 15px 0 0 0;
 			transition: height 0.5s ease-in-out;

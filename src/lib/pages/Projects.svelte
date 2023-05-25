@@ -1,62 +1,42 @@
 <script lang="ts">
-	export let projects: any = undefined;
+	import Card from '$components/Card.svelte';
+
+	const projects: { name: string; link: string; cover: string; desc: string }[] = [
+		{
+			name: 'Pivovar Moravia',
+			link: 'https://pivovar-moravia.cz/',
+			cover: 'projects/moravia.png',
+			desc: 'Promotional web for local brewery'
+		},
+		{
+			name: 'Bez úrazu',
+			link: 'https://bezurazu.cz/',
+			cover: 'projects/bezurazu.png',
+			desc: 'Presentation for non-profit project'
+		},
+		{
+			name: 'Holzmann machines',
+			link: 'https://holzmann-machines.eu/',
+			cover: 'projects/holzmann.png',
+			desc: 'E-shop for sawing equipment distributor'
+		}
+	];
 </script>
 
-<article id="projects">
+<article id="projects" class="py-16 lg:py-20">
 	{#if projects}
-		<div class="md:flex gap-4 container">
-			<section class="md:sticky md:top-[calc(64px+theme(margin.5))] md:w-96 h-fit pb-4">
-				<h2>
-					<span class="text-base block">recent</span>
-					Projects.
-				</h2>
-				<p class="text-sm mt-4">
-					check out my <a href="https://github.com/mkubincova">Github</a> for more projects
-				</p>
+		<div class="container">
+			<section class="pb-6 text-center">
+				<h2>Selected Work.</h2>
+				<p>check out my <a href="https://github.com/mkubincova">Github</a> for more projects</p>
 			</section>
-			<section>
-				<ul class="flex-1 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-					{#each projects as project}
-						<li class="flex gap-2 items-center sm:flex-col sm:items-start">
-							<div class="zoom-container w-1/2 sm:w-auto" style="--bkg-url: url({project.cover})">
-								<img src={project.cover} alt="" width="400" height="300" />
-							</div>
-
-							<div class="w-1/2 sm:w-auto">
-								<h3>{project.name}</h3>
-							</div>
-						</li>
-					{/each}
-				</ul>
+			<section
+				class="grid gap-2 sm:gap-4 gird-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(290px,1fr))]"
+			>
+				{#each projects as project}
+					<Card item={project} />
+				{/each}
 			</section>
 		</div>
 	{/if}
 </article>
-
-<style lang="scss">
-	.zoom-container {
-		position: relative;
-		overflow: hidden;
-		aspect-ratio: 400 / 250;
-
-		&:before {
-			content: '';
-			position: absolute;
-			inset: 0 0 0 0;
-			background: var(--bkg-url) no-repeat center;
-			background-size: 115%;
-			clip-path: circle(0% at 100% 100%);
-			transition: clip-path 0.5s ease-in-out, background-size 0.5s ease-in-out;
-		}
-		&:hover:before {
-			clip-path: circle(150% at 100% 100%);
-			background-size: 120%;
-		}
-
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-	}
-</style>

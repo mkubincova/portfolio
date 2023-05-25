@@ -2,87 +2,22 @@
 	{
 		"id": 1,
 		"name": "Pivovar Moravia",
-		"cover": "https://picsum.photos/400/300",
-		"shortText": "lorem fdsaf ds lfsla dfjl gjkrlg rklag fjkg lrg alreg; rega ;l ggfgdfgdgfgf fgdgfdgdg",
-		"techStack": [
-			{
-				"name": "Svelte",
-				"icon": "/icons/svelte.svg"
-			},
-			{
-				"name": "MongoDB",
-				"icon": "/icons/mongo.svg"
-			}
-		]
+		"link": "https://pivovar-moravia.cz/",
+		"cover": "projects/moravia.png",
+		"desc": "Promotional web for local brewery"
 	},
 	{
 		"id": 2,
 		"name": "Bez úrazu",
-		"cover": "https://picsum.photos/400/300",
-		"techStack": [
-			{
-				"name": "Svelte",
-				"icon": "/icons/svelte.svg"
-			},
-			{
-				"name": "MongoDB",
-				"icon": "/icons/mongo.svg"
-			}
-		]
+		"link": "https://bezurazu.cz/",
+		"cover": "projects/bezurazu.png",
+		"desc": "Presentation for non-profit project"
 	},
 	{
 		"id": 3,
 		"name": "Holzmann machines",
-		"cover": "https://picsum.photos/400/300",
-		"shortText": "lorem fdsaf ds lfsla dfjl gjkrlg rklag fjkg lrg alreg; rega ;l ggfgdfgdgfgf fgdgfdgdg",
-		"techStack": [
-			{
-				"name": "Svelte",
-				"icon": "/icons/svelte.svg"
-			}
-		]
-	},
-	{
-		"id": 1,
-		"name": "Project 1",
-		"cover": "https://picsum.photos/400/300",
-		"shortText": "lorem fdsaf ds lfsla dfjl gjkrlg rklag fjkg lrg alreg; rega ;l ggfgdfgdgfgf fgdgfdgdg",
-		"techStack": [
-			{
-				"name": "Svelte",
-				"icon": "/icons/svelte.svg"
-			},
-			{
-				"name": "MongoDB",
-				"icon": "/icons/mongo.svg"
-			}
-		]
-	},
-	{
-		"id": 2,
-		"name": "Project 2",
-		"cover": "https://picsum.photos/400/300",
-		"techStack": [
-			{
-				"name": "Svelte",
-				"icon": "/icons/svelte.svg"
-			},
-			{
-				"name": "MongoDB",
-				"icon": "/icons/mongo.svg"
-			}
-		]
-	},
-	{
-		"id": 3,
-		"name": "Project 3",
-		"cover": "https://picsum.photos/400/300",
-		"shortText": "lorem fdsaf ds lfsla dfjl gjkrlg rklag fjkg lrg alreg; rega ;l ggfgdfgdgfgf fgdgfdgdg",
-		"techStack": [
-			{
-				"name": "Svelte",
-				"icon": "/icons/svelte.svg"
-			}
-		]
+		"link": "https://holzmann-machines.eu/",
+		"cover": "projects/holzmann.png",
+		"desc": "E-shop for sawing equipment distributor"
 	}
 ]
