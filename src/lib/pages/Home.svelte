@@ -4,7 +4,7 @@
 	import photo from '$assets/profile-rect.png';
 </script>
 
-<article class="pt-[calc(54px+theme(padding.3))] md:pt-[calc(60px+theme(padding.3))]" id="home">
+<article id="home">
 	<section
 		class="flex flex-col lg:flex-row gap-10 items-center lg:items-start container py-5 md:px-16"
 	>

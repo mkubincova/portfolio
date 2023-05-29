@@ -5,8 +5,6 @@
 		eyes.forEach((eye) => {
 			let x = eye.getBoundingClientRect().left + eye.clientWidth / 2;
 			let y = eye.getBoundingClientRect().top + eye.clientHeight / 2;
-			console.log(e.pageX);
-			console.log(e.clientX);
 
 			let radian = Math.atan2(e.clientX - x, e.clientY - y);
 			let rotation = radian * (180 / Math.PI) * -1 + 270;

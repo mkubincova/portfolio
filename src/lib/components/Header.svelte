@@ -29,9 +29,11 @@
 		headerOpacity = scrollY / header.offsetHeight < 1 ? scrollY / header.offsetHeight : 1;
 	}
 
-	// show/hide mobile menu
-	function toggleNav() {
+	// show/hide offcanvas
+	function toggleNav(e: Event) {
 		const body = document.querySelector('body');
+		const target = e.target as HTMLLinkElement;
+		if (target.id === 'logo' && !body?.classList.contains('offcanvas-open')) return;
 		body ? body.classList.toggle('offcanvas-open') : '';
 	}
 
@@ -40,7 +42,6 @@
 	let prevId: string | null = 'home';
 	let currId: string | null = null;
 
-	// get all articles from menu
 	onMount(() => {
 		mainMenu.forEach((item) => {
 			if (item.path[0] === '#') {
@@ -73,12 +74,15 @@
 <svelte:window bind:scrollY on:scroll={getCurrArticle} />
 
 <header
-	class="fixed top-0 left-0 right-0 p-3 transition-transform duration-200"
+	class="sticky top-0 left-0 right-0 p-3 transition-transform duration-200"
 	bind:this={header}
 	style="--opacity: {headerOpacity};"
 >
 	<nav class="container flex gap-x-4 gap-y-2 flex-wrap items-center">
-		<span class="flex-1"><a href="#home" class="logo font-bold text-xl md:text-3xl">Magda.</a></span
+		<span class="flex-1"
+			><a href="#home" on:click={toggleNav} id="logo" class="logo font-bold text-xl md:text-3xl"
+				>Magda.</a
+			></span
 		>
 
 		<button id="toggle-nav" on:click={toggleNav} class="items-center gap-2">
@@ -109,6 +113,26 @@
 		<span class="contact-menu flex-1 text-right">
 			<a href="mailto:mkubincova@proton.me">mkubincova@proton.me</a>
 		</span>
+
+		<div id="offcanvas-menu">
+			<ul
+				class="flex flex-col text-center justify-center gap-8 text-3xl my-[54px] h-[calc(100%-108px)] overflow-auto"
+			>
+				{#each mainMenu as item, index}
+					{#if index !== 0}
+						<li class="py-1">
+							<a
+								href={item.path}
+								class={`#${currId}` === item.path ? 'active' : ''}
+								on:click={toggleNav}>{item.name}</a
+							>
+						</li>
+					{/if}
+				{/each}
+
+				<li class="text-lg pt-3"><a href="mailto:mkubincova@proton.me">mkubincova@proton.me</a></li>
+			</ul>
+		</div>
 	</nav>
 </header>
 
@@ -158,43 +182,30 @@
 		display: none;
 	}
 
+	#offcanvas-menu {
+		content: '';
+		position: fixed;
+		inset: 0;
+		background-color: var(--color-text);
+		transform: translateX(100%);
+		z-index: -1;
+		transition: transform 0.3s ease-in-out;
+
+		a {
+			visibility: hidden;
+			pointer-events: none;
+		}
+	}
+
 	@media (max-width: 767px) {
 		:global(.js) {
 			header {
 				color: var(--header-color);
 				transition: color 0.3s ease-in-out;
-
-				nav {
-					height: var(--menu-icon-w);
-				}
-
-				&::before {
-					content: '';
-					position: fixed;
-					inset: 0;
-					background-color: var(--color-text);
-					transform: translateX(100%);
-					z-index: -1;
-					transition: transform 0.3s ease-in-out;
-				}
 			}
 			.site-menu,
 			.contact-menu {
-				position: relative;
-				width: 100%;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				margin-top: 30px;
-				transform: translateX(100%);
-				visibility: hidden;
-				pointer-events: none;
-				transition: transform 0.3s ease-in-out;
-			}
-			.site-menu {
-				font-size: 2rem;
-				line-height: 1.5;
-				padding: 10% 0 5%;
+				display: none;
 			}
 
 			#toggle-nav {
@@ -241,15 +252,14 @@
 				header {
 					--header-color: var(--color-text-inverse);
 					--outline-color: var(--color-text-inverse);
-					&::before {
-						transform: translateX(0);
-					}
 				}
-				.site-menu,
-				.contact-menu {
+
+				#offcanvas-menu {
 					transform: translateX(0);
-					visibility: visible;
-					pointer-events: all;
+					a {
+						visibility: visible;
+						pointer-events: auto;
+					}
 				}
 				#toggle-nav {
 					.is-open {
