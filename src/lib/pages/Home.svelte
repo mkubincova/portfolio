@@ -25,7 +25,7 @@
 					<source media="(min-width: 1024px)" srcset={photo} />
 					<img
 						src={photoSq}
-						alt=""
+						alt="Headshot of Magdaléna Kubincová"
 						class="rounded-full md:rounded-[200px] relative max-w-[200px] md:max-w-xs lg:max-w-none bg-[var(--color-pink)]"
 					/>
 				</picture>

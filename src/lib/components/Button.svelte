@@ -19,10 +19,6 @@
 	export let className: string = '';
 
 	let node: HTMLAnchorElement | HTMLButtonElement;
-
-	export function focus() {
-		node.focus();
-	}
 </script>
 
 <svelte:element

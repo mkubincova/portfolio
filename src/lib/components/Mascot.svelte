@@ -23,7 +23,7 @@
 			<div class="eye" />
 		</div>
 	</div>
-	<svg class="ground" viewBox="0 0 1920 60" aria-hidden="true" style="transform: rotateY(180deg)"
+	<svg class="ground" viewBox="0 0 1920 60" aria-hidden style="transform: rotateY(180deg)"
 		><path
 			data-theme="softSecondary"
 			fill="var(--color-text)"

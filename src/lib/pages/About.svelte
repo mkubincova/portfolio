@@ -11,21 +11,21 @@
 					href="https://www.linkedin.com/in/mkubincova/"
 					target="_blank"
 					class="p-3 rounded-xl bg-[var(--color-blue)] hover:scale-105 transition-transform"
-					aria-label="Linkedin"><Linkedin size={35} /></a
+					aria-label="Linkedin profile"><Linkedin size={35} role="img" aria-hidden /></a
 				>
 
 				<a
 					href="https://github.com/mkubincova"
 					target="_blank"
 					class="p-3 rounded-xl bg-[var(--color-pink)] hover:scale-105 transition-transform"
-					aria-label="Github"><Github size={35} /></a
+					aria-label="Github profile"><Github size={35} role="img" aria-hidden /></a
 				>
 
 				<a
 					href="https://www.behance.net/mkubincova"
 					target="_blank"
 					class="p-3 rounded-xl bg-[var(--color-purple)] hover:scale-105 transition-transform"
-					aria-label="Behance"><PaintbrushIcon size={35} /></a
+					aria-label="Behance profile"><PaintbrushIcon size={35} role="img" aria-hidden /></a
 				>
 			</div>
 			<div class="bg-[var(--color-text-inverse)] p-5 rounded-xl border-[5px] border-current">
@@ -45,7 +45,8 @@
 					href="/books/a-great-book.pdf"
 					target="_blank"
 					className="mt-5"
-					><svelte:fragment slot="leftIcon"><Download /></svelte:fragment>Dowload CV
+					><svelte:fragment slot="leftIcon"><Download role="img" aria-hidden /></svelte:fragment
+					>Dowload CV
 				</Button>
 			</div>
 		</section>

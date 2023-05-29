@@ -6,7 +6,13 @@
 
 <a href={item.link} target="_blank" class="card">
 	<div class="sm:aspect-[2/1] overflow-hidden">
-		<img src={item.cover} alt="" class="w-full h-full object-cover" width="400" height="200" />
+		<img
+			src={item.cover}
+			alt="Homepage of {item.name} website."
+			class="w-full h-full object-cover"
+			width="400"
+			height="200"
+		/>
 	</div>
 
 	<div
@@ -16,7 +22,7 @@
 			<p class="text-lg font-bold leading-5 mb-1">{item.name}</p>
 			<p class="text-xs text-stone-600">{item.desc}</p>
 		</div>
-		<ArrowUpRight size={35} />
+		<ArrowUpRight size={35} role="img" aria-hidden />
 	</div>
 </a>
 

@@ -80,8 +80,12 @@
 >
 	<nav class="container flex gap-x-4 gap-y-2 flex-wrap items-center">
 		<span class="flex-1"
-			><a href="#home" on:click={toggleNav} id="logo" class="logo font-bold text-xl md:text-3xl"
-				>Magda.</a
+			><a
+				href="#home"
+				on:click={toggleNav}
+				id="logo"
+				class="logo font-bold text-xl md:text-3xl"
+				aria-label="Home section">Magda.</a
 			></span
 		>
 
@@ -95,16 +99,7 @@
 			{#each mainMenu as item, index}
 				{#if index !== 0}
 					<li>
-						<a
-							href={item.path}
-							class={!currId
-								? index === 0
-									? 'active'
-									: ''
-								: `#${currId}` === item.path
-								? 'active'
-								: ''}>{item.name}</a
-						>
+						<a href={item.path} class={`#${currId}` === item.path ? 'active' : ''}>{item.name}</a>
 					</li>
 				{/if}
 			{/each}

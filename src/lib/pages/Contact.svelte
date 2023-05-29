@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Download, Mail, MapPin } from 'lucide-svelte';
+	import { Mail } from 'lucide-svelte';
 	import Button from '$components/Button.svelte';
 </script>
 
@@ -22,7 +22,8 @@
 				href="mailto:makubincova@proton.me?subject=Hello"
 				target="_blank"
 				className="mt-5"
-				><svelte:fragment slot="leftIcon"><Mail /></svelte:fragment>Message me
+				><svelte:fragment slot="leftIcon"><Mail role="img" aria-hidden /></svelte:fragment>Message
+				me
 			</Button>
 		</section>
 	</div>
