@@ -15,7 +15,6 @@
 	};
 
 	export let element: Element;
-	export let variant: 'solid' | undefined = undefined;
 	export let className: string = '';
 
 	let node: HTMLAnchorElement | HTMLButtonElement;

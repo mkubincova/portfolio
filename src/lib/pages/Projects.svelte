@@ -12,7 +12,7 @@
 			name: 'Bez úrazu',
 			link: 'https://bezurazu.cz/',
 			cover: 'projects/bezurazu.png',
-			desc: 'Presentation for non-profit project'
+			desc: 'Presentation for non-profit organization'
 		},
 		{
 			name: 'Holzmann machines',
@@ -28,8 +28,8 @@
 		<div class="container">
 			<section class="pb-6 text-center">
 				<h2>
-					Selected <span class="circle-sketch-highlight" style="--color-sketch: var(--color-blue)"
-						>Work.</span
+					Recent <span class="circle-sketch-highlight" style="--color-sketch: var(--color-blue)"
+						>projects.</span
 					>
 				</h2>
 				<p>check out my <a href="https://github.com/mkubincova">Github</a> for more projects</p>

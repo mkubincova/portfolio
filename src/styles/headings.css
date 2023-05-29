@@ -1,9 +1,6 @@
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
 	@apply mb-4;
 	font-family: 'Orelega One', serif;
 }
@@ -18,17 +15,8 @@ h2 {
 h3 {
 	@apply text-2xl;
 }
-h4 {
-	@apply text-xl;
-}
-h5 {
-	@apply text-lg;
-}
-h6 {
-	@apply text-base;
-}
 
-@media screen and (min-width: 768px) {
+@media (min-width: 768px) {
 	h1 {
 		@apply text-5xl;
 		line-height: 1.25;
@@ -38,14 +26,5 @@ h6 {
 	}
 	h3 {
 		@apply text-2xl;
-	}
-	h4 {
-		@apply text-xl;
-	}
-	h5 {
-		@apply text-lg;
-	}
-	h6 {
-		@apply text-base;
 	}
 }

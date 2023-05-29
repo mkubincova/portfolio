@@ -27,7 +27,7 @@
 					<img
 						src={photoSq}
 						alt="Headshot of Magdaléna Kubincová"
-						class="rounded-full md:rounded-[200px] relative max-w-[200px] md:max-w-xs lg:max-w-none bg-[var(--color-green)]"
+						class="rounded-full md:rounded-[200px] relative max-w-[200px] md:max-w-xs lg:max-w-none bg-[var(--color-green)] border border-current"
 					/>
 				</picture>
 			</div>
