@@ -35,8 +35,6 @@
 			linear-gradient(to right, var(--color-text) 1px, var(--color-yellow) 1px);
 		background-size: 30px 30px;
 		background-attachment: fixed;
-		border-bottom: 1px solid var(--color-text);
-		border-top: 1px solid var(--color-text);
 		box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.7);
 	}
 </style>

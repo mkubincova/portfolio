@@ -9,18 +9,21 @@
 			<div class="flex gap-3 md:flex-col">
 				<a
 					href="https://www.linkedin.com/in/mkubincova/"
+					target="_blank"
 					class="p-3 rounded-xl bg-[var(--color-blue)] hover:scale-105 transition-transform"
 					aria-label="Linkedin"><Linkedin size={35} /></a
 				>
 
 				<a
 					href="https://github.com/mkubincova"
+					target="_blank"
 					class="p-3 rounded-xl bg-[var(--color-pink)] hover:scale-105 transition-transform"
 					aria-label="Github"><Github size={35} /></a
 				>
 
 				<a
 					href="https://www.behance.net/mkubincova"
+					target="_blank"
 					class="p-3 rounded-xl bg-[var(--color-purple)] hover:scale-105 transition-transform"
 					aria-label="Behance"><PaintbrushIcon size={35} /></a
 				>
@@ -56,11 +59,6 @@
 			linear-gradient(to right, var(--color-text) 1px, var(--color-yellow) 1px);
 		background-size: 30px 30px;
 		background-attachment: fixed;
-		border-bottom: 1px solid var(--color-text);
-		border-top: 1px solid var(--color-text);
 		box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.7);
 	}
-	// .icon:hover {
-	// 	background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 0);
-	// }
 </style>
