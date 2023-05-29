@@ -89,12 +89,7 @@
 			></span
 		>
 
-		<button id="toggle-nav" on:click={toggleNav} class="items-center gap-2">
-			<span class="is-closed text-sm">menu</span>
-			<span class="is-open text-sm">close</span>
-			<span class="menu-icon"><span class="hamb-line" /></span>
-		</button>
-
+		<!-- desktop menu -->
 		<ul class="site-menu flex gap-8 text-base">
 			{#each mainMenu as item, index}
 				{#if index !== 0}
@@ -109,7 +104,17 @@
 			<a href="mailto:mkubincova@proton.me">mkubincova@proton.me</a>
 		</span>
 
-		<div id="offcanvas-menu">
+		<!-- mobile (offcanvas) menu -->
+		<button id="toggle-nav" on:click={toggleNav} class="items-center gap-2 hidden">
+			<span class="is-closed text-sm">menu</span>
+			<span class="is-open text-sm">close</span>
+			<span class="menu-icon"><span class="hamb-line" /></span>
+		</button>
+
+		<div
+			id="offcanvas-menu"
+			class="fixed inset-0 bg-[var(--color-text)] -z-10 translate-x-full transition-transform duration-300"
+		>
 			<ul
 				class="flex flex-col text-center justify-center gap-8 text-3xl my-[54px] h-[calc(100%-108px)] overflow-auto"
 			>
@@ -118,7 +123,7 @@
 						<li class="py-1">
 							<a
 								href={item.path}
-								class={`#${currId}` === item.path ? 'active' : ''}
+								class="{`#${currId}` === item.path ? 'active' : ''} hidden pb-[0.1em]"
 								on:click={toggleNav}>{item.name}</a
 							>
 						</li>
@@ -132,66 +137,47 @@
 </header>
 
 <style lang="scss">
+	// header opacity transition
 	header {
 		background-color: rgba(255, 255, 255, var(--opacity));
 		box-shadow: 0 -5px 10px rgba(0, 0, 0, var(--opacity));
 		z-index: 1000;
 
 		:global(.no-js) & {
-			background-color: #fff;
-			box-shadow: 0 -5px 10px #000;
+			--opacity: 1 !important;
 		}
 	}
 
+	// nav underline transition
 	nav a {
-		text-decoration: none;
-		display: inline-block;
-		background-image: linear-gradient(currentColor, currentColor);
-		background-position: 0% 100%;
-		background-repeat: no-repeat;
+		@apply no-underline inline-block;
+		background: linear-gradient(currentColor, currentColor) 0% 100% no-repeat;
 		background-size: 0% 0.15em;
 		transition: background-size 0.5s;
 
 		&.active {
 			background-size: 1em 0.15em;
-
-			:global(.no-js) & {
-				background-size: 0 0.15em;
-			}
 		}
 
 		&:hover {
 			background-size: 100% 0.15em;
+		}
 
-			:global(.no-js) & {
+		:global(.no-js) & {
+			&.active {
+				background-size: 0 0.15em;
+			}
+			&:hover {
 				background-size: 100% 0.15em;
 			}
 		}
 
 		&.logo {
-			background-image: none;
+			background: none;
 		}
 	}
 
-	#toggle-nav {
-		display: none;
-	}
-
-	#offcanvas-menu {
-		content: '';
-		position: fixed;
-		inset: 0;
-		background-color: var(--color-text);
-		transform: translateX(100%);
-		z-index: -1;
-		transition: transform 0.3s ease-in-out;
-
-		a {
-			visibility: hidden;
-			pointer-events: none;
-		}
-	}
-
+	// offcanvas menu for small screen with enabled javascript
 	@media (max-width: 767px) {
 		:global(.js) {
 			header {
@@ -207,25 +193,13 @@
 				display: flex;
 
 				.menu-icon {
-					width: var(--menu-icon-w);
-					height: var(--menu-icon-w);
-					display: flex;
-					flex-direction: column;
-					justify-content: center;
+					@apply flex flex-col justify-center w-[var(--menu-icon-w)] w-[var(--menu-icon-w)];
 
 					.hamb-line {
-						position: relative;
-						width: 100%;
-						height: var(--menu-icon-line-h);
-						background-color: currentColor;
+						@apply relative w-full h-[var(--menu-icon-line-h)] bg-current;
 						&::before,
 						&::after {
-							content: '';
-							position: absolute;
-							left: 0;
-							width: 100%;
-							height: var(--menu-icon-line-h);
-							background-color: currentColor;
+							@apply content-[''] absolute right-0 w-full h-[var(--menu-icon-line-h)] bg-current;
 							transition: rotate 0.2s ease-in-out, top 0.2s ease-in-out;
 						}
 						&::before {
@@ -251,9 +225,9 @@
 
 				#offcanvas-menu {
 					transform: translateX(0);
+
 					a {
-						visibility: visible;
-						pointer-events: auto;
+						display: inline-block;
 					}
 				}
 				#toggle-nav {
@@ -265,14 +239,16 @@
 					}
 					.hamb-line {
 						background: transparent;
-					}
-					.hamb-line::before {
-						rotate: -45deg;
-						top: 0;
-					}
-					.hamb-line::after {
-						rotate: 45deg;
-						top: 0;
+
+						&::before {
+							rotate: -45deg;
+							top: 0;
+						}
+
+						&::after {
+							rotate: 45deg;
+							top: 0;
+						}
 					}
 				}
 			}

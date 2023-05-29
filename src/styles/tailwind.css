@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Orelega+One&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -15,5 +15,80 @@
 	*:focus-visible {
 		outline: 3px dashed var(--outline-color);
 		outline-offset: 2px;
+	}
+
+	a {
+		color: inherit;
+		text-decoration: 2px underline;
+		text-underline-offset: 2px;
+	}
+
+	a:hover {
+		text-decoration: none;
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+		box-sizing: border-box;
+	}
+	article {
+		flex: 1;
+		padding: theme(padding.3);
+		box-sizing: border-box;
+		position: relative;
+	}
+}
+
+@layer components {
+	.container {
+		@apply mx-auto;
+		max-width: 1200px;
+	}
+	.cover-container {
+		@apply relative w-fit z-10;
+	}
+	.cover-container::before {
+		@apply content-[''] absolute inset-0 translate-x-[10%] translate-y-1 bg-[var(--color-green)] rounded-full border-5 border-current lg:rounded-[200px];
+	}
+}
+
+@layer utilities {
+	.bg-pattern {
+		background-image: linear-gradient(var(--color-text) 1px, transparent 1px),
+			linear-gradient(to right, var(--color-text) 1px, var(--color-purple) 1px);
+		background-size: 30px 30px;
+		background-attachment: fixed;
+		box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.5);
+	}
+
+	.circle-sketch-highlight {
+		@apply relative inline-block z-0;
+	}
+
+	.circle-sketch-highlight::before,
+	.circle-sketch-highlight::after {
+		content: '';
+		position: absolute;
+		left: -0.3em;
+		width: calc(100% + 0.3em);
+		height: 1.3em;
+		padding: 0.1em 0.25em;
+		border: 0.15em solid var(--color-sketch);
+		border-radius: 50%;
+		z-index: -1;
+	}
+
+	.circle-sketch-highlight::before {
+		border-right-color: transparent;
+		transform: rotate(2deg);
+		top: -0.1em;
+	}
+
+	.circle-sketch-highlight::after {
+		border-left-color: transparent;
+		border-top-color: transparent;
+		transform: rotate(-1deg);
+		top: 0.1em;
 	}
 }

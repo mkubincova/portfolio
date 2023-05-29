@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { ArrowUpRight } from 'lucide-svelte';
 
-	export let item: any;
+	export let item: { name: string; link: string; cover: string; desc: string };
 </script>
 
 <a href={item.link} target="_blank" class="card">
@@ -20,7 +20,7 @@
 	>
 		<div class="flex-1 sm:flex-initial">
 			<p class="text-lg font-bold leading-5 mb-1">{item.name}</p>
-			<p class="text-xs text-stone-600">{item.desc}</p>
+			<p class="text-xs">{item.desc}</p>
 		</div>
 		<ArrowUpRight size={35} role="img" aria-hidden />
 	</div>

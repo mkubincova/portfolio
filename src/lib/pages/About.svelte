@@ -1,32 +1,40 @@
 <script lang="ts">
 	import { Download, Github, Linkedin, PaintbrushIcon } from 'lucide-svelte';
 	import Button from '$components/Button.svelte';
+	import IconButton from '$components/IconButton.svelte';
 </script>
 
-<article id="about" class="pt-24 pb-16 -mt-20 lg:pt-36 lg:pb-20">
+<article id="about" class="pt-24 pb-16 -mt-20 lg:pt-36 lg:pb-20 bg-pattern">
 	<div class="container">
 		<section class="flex flex-col gap-3 md:flex-row justify-center">
 			<div class="flex gap-3 md:flex-col">
-				<a
+				<IconButton
+					element="a"
 					href="https://www.linkedin.com/in/mkubincova/"
+					aria-label="Linkedin profile"
 					target="_blank"
-					class="p-3 rounded-xl bg-[var(--color-blue)] hover:scale-105 transition-transform"
-					aria-label="Linkedin profile"><Linkedin size={35} role="img" aria-hidden /></a
+					style="--bg-color: var(--color-blue)"
 				>
-
-				<a
+					<Linkedin size={35} role="img" aria-hidden />
+				</IconButton>
+				<IconButton
+					element="a"
 					href="https://github.com/mkubincova"
+					aria-label="Github profile"
 					target="_blank"
-					class="p-3 rounded-xl bg-[var(--color-pink)] hover:scale-105 transition-transform"
-					aria-label="Github profile"><Github size={35} role="img" aria-hidden /></a
+					style="--bg-color: var(--color-yellow)"
 				>
-
-				<a
+					<Github size={35} role="img" aria-hidden />
+				</IconButton>
+				<IconButton
+					element="a"
 					href="https://www.behance.net/mkubincova"
+					aria-label="Linkedin profile"
 					target="_blank"
-					class="p-3 rounded-xl bg-[var(--color-purple)] hover:scale-105 transition-transform"
-					aria-label="Behance profile"><PaintbrushIcon size={35} role="img" aria-hidden /></a
+					style="--bg-color: var(--color-green)"
 				>
+					<PaintbrushIcon size={35} role="img" aria-hidden />
+				</IconButton>
 			</div>
 			<div class="bg-[var(--color-text-inverse)] p-5 rounded-xl border-[5px] border-current">
 				<h2>About me...</h2>
@@ -52,14 +60,3 @@
 		</section>
 	</div>
 </article>
-
-<style lang="scss">
-	article {
-		background-color: var(--color-yellow);
-		background-image: linear-gradient(var(--color-text) 1px, transparent 1px),
-			linear-gradient(to right, var(--color-text) 1px, var(--color-yellow) 1px);
-		background-size: 30px 30px;
-		background-attachment: fixed;
-		box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.7);
-	}
-</style>

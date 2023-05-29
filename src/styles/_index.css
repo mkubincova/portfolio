@@ -1,7 +1,3 @@
 @import './tailwind.css';
 @import './variables.css';
-
-/* basic element styles */
-@import './base/heading.css';
-@import './base/link.css';
-@import './base/layout.css';
+@import './headings.css';

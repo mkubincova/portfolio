@@ -27,7 +27,11 @@
 	{#if projects}
 		<div class="container">
 			<section class="pb-6 text-center">
-				<h2>Selected Work.</h2>
+				<h2>
+					Selected <span class="circle-sketch-highlight" style="--color-sketch: var(--color-blue)"
+						>Work.</span
+					>
+				</h2>
 				<p>check out my <a href="https://github.com/mkubincova">Github</a> for more projects</p>
 			</section>
 			<section

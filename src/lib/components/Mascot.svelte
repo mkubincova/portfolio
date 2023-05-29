@@ -16,14 +16,20 @@
 
 <svelte:window on:mousemove={moveEyes} />
 
-<div id="mascot-container">
-	<div class="mascot">
-		<div class="eyes">
+<div id="mascot-container" class="fixed bottom-0 w-screen z-20">
+	<div
+		class="absolute bottom-0 right-[15%] w-[60px] h-[60px] bg-current rounded-tl-xl transition-[height] duration-500 hover:h-[100px]"
+	>
+		<div class="w-[130%] -ml-[15%] mt-2.5 flex justify-between relative">
 			<div class="eye" />
 			<div class="eye" />
 		</div>
 	</div>
-	<svg class="ground" viewBox="0 0 1920 60" aria-hidden style="transform: rotateY(180deg)"
+	<svg
+		class="absolute bottom-0"
+		viewBox="0 0 1920 60"
+		aria-hidden
+		style="transform: rotateY(180deg)"
 		><path
 			data-theme="softSecondary"
 			fill="var(--color-text)"
@@ -33,62 +39,12 @@
 </div>
 
 <style lang="scss">
-	#mascot-container {
-		position: fixed;
-		bottom: 0;
-		width: 100vw;
-		z-index: 100;
+	.eye {
+		@apply relative w-[35px] aspect-square bg-[var(--color-text-inverse)] block pointer-events-none rounded-full border border-current;
+		box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
 
-		.mascot {
-			position: absolute;
-			bottom: 0;
-			right: 15%;
-			width: 60px;
-			height: 60px;
-			background-color: var(--color-text);
-			border-radius: 15px 0 0 0;
-			transition: height 0.5s ease-in-out;
-
-			&:hover {
-				height: 100px;
-			}
-			.eyes {
-				width: 130%;
-				margin-left: -15%;
-				margin-top: 10px;
-				display: flex;
-				justify-content: space-between;
-				position: relative;
-			}
-
-			.eye {
-				position: relative;
-				width: 35px;
-				aspect-ratio: 1;
-				background-color: var(--color-text-inverse);
-				display: block;
-				pointer-events: none;
-				border-radius: 50%;
-				box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
-				border: 1px solid;
-
-				&::before {
-					content: '';
-					position: absolute;
-					top: 50%;
-					left: 10px;
-					transform: translate(-50%, -50%);
-					width: 15px;
-					aspect-ratio: 1;
-					background-color: var(--color-text);
-					border-radius: 50%;
-				}
-			}
-		}
-
-		.ground {
-			position: absolute;
-			bottom: 0;
+		&::before {
+			@apply content-[''] absolute inset-y-1/2 left-[10px] w-[15px] -translate-x-1/2 -translate-y-1/2 aspect-square bg-[var(--color-text)] rounded-full;
 		}
 	}
 </style>

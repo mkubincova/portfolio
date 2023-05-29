@@ -24,26 +24,18 @@
 <svelte:element
 	this={element}
 	bind:this={node}
-	class="btn {variant ? `btn-${variant}` : ''} {className}"
+	class="icon-btn {className}"
 	on:click
 	{...$$restProps}
 >
-	{#if $$slots.leftIcon}<span class="inline-block align-bottom mr-1"><slot name="leftIcon" /></span
-		>{/if}
 	<slot />
-	{#if $$slots.rightIcon}<span class="nline-block align-bottom ml-1"><slot name="rightIcon" /></span
-		>{/if}
 </svelte:element>
 
 <style lang="scss">
-	.btn {
+	.icon-btn {
 		--box-shadown-size: 3px;
-		@apply inline-block font-medium cursor-pointer py-2 px-3 no-underline rounded-md border-current border-3 bg-[var(--color-text-inverse)];
+		@apply inline-flex cursor-pointer p-2.5 no-underline rounded-md border-current border-3 bg-[var(--bg-color)];
 		box-shadow: var(--box-shadown-size) var(--box-shadown-size) 0px var(--color-text);
-
-		&.btn-solid {
-			background-color: var(--color-yellow);
-		}
 
 		&:hover {
 			background-image: linear-gradient(rgba(0, 0, 0, 0.2) 0 0);

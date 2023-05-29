@@ -3,7 +3,7 @@
 	import Button from '$components/Button.svelte';
 </script>
 
-<article id="contact" class="flex justify-center items-center py-16 lg:py-20">
+<article id="contact" class="flex justify-center items-center py-16 lg:py-20 bg-pattern">
 	<div class="container flex justify-center">
 		<section
 			class="bg-[var(--color-text-inverse)] p-5 rounded-xl border-[5px] border-current text-center w-fit"
@@ -28,14 +28,3 @@
 		</section>
 	</div>
 </article>
-
-<style lang="scss">
-	article {
-		background-color: var(--color-yellow);
-		background-image: linear-gradient(var(--color-text) 1px, transparent 1px),
-			linear-gradient(to right, var(--color-text) 1px, var(--color-yellow) 1px);
-		background-size: 30px 30px;
-		background-attachment: fixed;
-		box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.7);
-	}
-</style>
