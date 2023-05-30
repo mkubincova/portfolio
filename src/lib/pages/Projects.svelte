@@ -28,14 +28,16 @@
 		<div class="container">
 			<section class="pb-6 text-center">
 				<h2>
-					Recent <span class="circle-sketch-highlight" style="--color-sketch: var(--color-blue)"
+					Recent <span class="circle-sketch-highlight" style="--color-sketch: var(--color-green)"
 						>projects.</span
 					>
 				</h2>
-				<p>check out my <a href="https://github.com/mkubincova">Github</a> for more projects</p>
+				<p class="mt-6">
+					check out my <a href="https://github.com/mkubincova">Github</a> for more work
+				</p>
 			</section>
 			<section
-				class="grid gap-2 sm:gap-4 gird-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(290px,1fr))]"
+				class="mt-6 grid gap-2 sm:gap-4 gird-cols-1 sm:grid-cols-[repeat(auto-fill,minmax(290px,1fr))]"
 			>
 				{#each projects as project}
 					<Card item={project} />

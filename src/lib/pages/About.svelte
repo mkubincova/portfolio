@@ -4,7 +4,7 @@
 	import IconButton from '$components/IconButton.svelte';
 </script>
 
-<article id="about" class="pt-24 pb-16 -mt-20 lg:pt-36 lg:pb-20 bg-pattern">
+<article id="about" class="pt-32 md:pt-40 pb-16 -mt-24 md:pb-20 bg-pattern">
 	<div class="container">
 		<section class="flex flex-col gap-3 md:flex-row justify-center">
 			<div class="flex gap-3 md:flex-col">
@@ -13,7 +13,7 @@
 					href="https://www.linkedin.com/in/mkubincova/"
 					aria-label="Linkedin profile"
 					target="_blank"
-					style="--bg-color: var(--color-blue)"
+					style="--bg-color: var(--color-purple)"
 				>
 					<Linkedin size={35} role="img" aria-hidden />
 				</IconButton>
@@ -36,7 +36,7 @@
 					<PaintbrushIcon size={35} role="img" aria-hidden />
 				</IconButton>
 			</div>
-			<div class="bg-[var(--color-text-inverse)] p-5 rounded-xl border-[5px] border-current">
+			<div class="bg-[var(--color-site-bg)] p-5 rounded-xl border-[5px] border-current">
 				<h2>About me...</h2>
 				<p class="text-base max-w-prose">
 					My name is <strong>Magdaléna Kubincová</strong> and I am a web developer from Slovakia.

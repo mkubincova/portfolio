@@ -9,7 +9,7 @@
 		font-family: 'Montserrat', sans-serif;
 		color: var(--color-text);
 		scroll-behavior: smooth;
-		background: var(--color-text-inverse);
+		background: var(--color-site-bg);
 	}
 
 	*:focus-visible {
@@ -48,15 +48,23 @@
 	.cover-container {
 		@apply relative w-fit z-10;
 	}
+	.cover-container::before,
+	.cover-container::after {
+		@apply content-[''] absolute inset-0 rounded-[0.5em] border-5 border-current transition-transform duration-300 translate-x-[-5px] translate-y-[5px] hover:translate-x-0 hover:translate-y-0;
+		box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.25);
+	}
 	.cover-container::before {
-		@apply content-[''] absolute inset-0 translate-x-[10%] translate-y-1 bg-[var(--color-green)] rounded-full border-5 border-current lg:rounded-[200px];
+		@apply bg-[var(--color-purple)] rotate-[-15deg] hover:-rotate-6 delay-200;
+	}
+	.cover-container::after {
+		@apply bg-[var(--color-green)] rotate-[-5deg] hover:rotate-3 delay-100;
 	}
 }
 
 @layer utilities {
 	.bg-pattern {
-		background-image: linear-gradient(var(--color-text) 1px, transparent 1px),
-			linear-gradient(to right, var(--color-text) 1px, var(--color-purple) 1px);
+		background-image: linear-gradient(var(--color-site-bg) 1px, transparent 1px),
+			linear-gradient(to right, var(--color-site-bg) 1px, var(--color-blue) 1px);
 		background-size: 30px 30px;
 		background-attachment: fixed;
 		box-shadow: inset 0 0px 1em rgba(0, 0, 0, 0.5);

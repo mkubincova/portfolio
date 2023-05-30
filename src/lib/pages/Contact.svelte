@@ -6,7 +6,7 @@
 <article id="contact" class="flex justify-center items-center py-16 lg:py-20 bg-pattern">
 	<div class="container flex justify-center">
 		<section
-			class="bg-[var(--color-text-inverse)] p-5 rounded-xl border-[5px] border-current text-center w-fit"
+			class="bg-[var(--color-site-bg)] p-5 rounded-xl border-[5px] border-current text-center w-fit"
 		>
 			<h2>Get in touch!</h2>
 			<p class="text-base max-w-prose">

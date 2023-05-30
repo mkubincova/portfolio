@@ -84,7 +84,7 @@
 				href="#home"
 				on:click={toggleNav}
 				id="logo"
-				class="logo font-bold text-xl md:text-3xl"
+				class="logo text-xl md:text-3xl"
 				aria-label="Home section">Magda.</a
 			></span
 		>
@@ -150,7 +150,7 @@
 
 	// nav underline transition
 	nav a {
-		@apply no-underline inline-block;
+		@apply no-underline inline-block font-medium;
 		background: linear-gradient(currentColor, currentColor) 0% 100% no-repeat;
 		background-size: 0% 0.15em;
 		transition: background-size 0.5s;
@@ -174,6 +174,7 @@
 
 		&.logo {
 			background: none;
+			font-weight: 700;
 		}
 	}
 
@@ -219,8 +220,8 @@
 			:global(body.offcanvas-open) {
 				overflow: hidden;
 				header {
-					--header-color: var(--color-text-inverse);
-					--outline-color: var(--color-text-inverse);
+					--header-color: var(--color-site-bg);
+					--outline-color: var(--color-site-bg);
 				}
 
 				#offcanvas-menu {

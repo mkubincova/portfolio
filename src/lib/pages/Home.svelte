@@ -6,12 +6,12 @@
 
 <article id="home">
 	<section
-		class="flex flex-col lg:flex-row gap-10 items-center lg:items-start container py-5 md:px-16"
+		class="flex flex-col lg:flex-row gap-20 lg:gap-10 items-center lg:items-start container py-5 md:px-16 lg:pt-16"
 	>
-		<div class="text-center lg:text-left flex-1 lg:pt-5 xl:pt-16">
+		<div class="text-center lg:text-left flex-1">
 			<h1>
-				Hi, I'm Magda,<br />a
-				<span class="circle-sketch-highlight" style="--color-sketch: var(--color-blue)"
+				Hi! I'm Magda,<br />a
+				<span class="circle-sketch-highlight" style="--color-sketch: var(--color-purple)"
 					>Web&nbsp;Developer</span
 				> with an eye for design.
 			</h1>
@@ -27,7 +27,7 @@
 					<img
 						src={photoSq}
 						alt="Headshot of Magdaléna Kubincová"
-						class="rounded-full md:rounded-[200px] relative max-w-[200px] md:max-w-xs lg:max-w-none bg-[var(--color-green)] border border-current"
+						class="rounded-[0.5em] relative max-w-[200px] md:max-w-xs lg:max-w-none border-5 border-current bg-[var(--color-yellow)] grayscale rotate-[5deg] hover:rotate-0 hover:grayscale-0 transition duration-300 z-10 shadow-[-5px_5px_10px_rgba(0,0,0,0.25)]"
 					/>
 				</picture>
 			</div>

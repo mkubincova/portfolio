@@ -38,7 +38,7 @@
 <style lang="scss">
 	.btn {
 		--box-shadown-size: 3px;
-		@apply inline-block font-medium cursor-pointer py-2 px-3 no-underline rounded-md border-current border-3 bg-[var(--color-text-inverse)];
+		@apply inline-block font-medium cursor-pointer py-2 px-3 no-underline rounded-md border-current border-3 bg-[var(--color-site-bg)];
 		box-shadow: var(--box-shadown-size) var(--box-shadown-size) 0px var(--color-text);
 
 		&.btn-solid {

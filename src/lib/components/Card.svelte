@@ -28,6 +28,6 @@
 
 <style lang="scss">
 	.card {
-		@apply bg-[var(--color-text-inverse)] rounded-xl border-[3px] border-current overflow-hidden hover:scale-105 transition-transform no-underline grid grid-cols-3 sm:grid-cols-1 content-start;
+		@apply bg-[var(--color-site-bg)] rounded-xl border-[3px] border-current overflow-hidden hover:scale-105 transition-transform no-underline grid grid-cols-3 sm:grid-cols-1 content-start;
 	}
 </style>
