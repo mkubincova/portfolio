@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../styles/_index.css';
+	import '../styles/index.css';
 	import { page } from '$app/stores';
 	import { Header, Mascot } from '$components';
 </script>

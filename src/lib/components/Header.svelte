@@ -81,7 +81,7 @@
 	<nav class="container flex gap-x-4 gap-y-2 flex-wrap items-center">
 		<span class="flex-1"
 			><a
-				href="#home"
+				href="#app"
 				on:click={toggleNav}
 				id="logo"
 				class="logo text-xl md:text-3xl"

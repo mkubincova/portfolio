@@ -1,4 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Orelega+One&display=swap');
+:root {
+	--color-text: theme(colors.stone.950);
+	--outline-color: var(--color-text);
+
+	--menu-icon-w: 30px;
+	--menu-icon-line-h: 3px;
+
+	--header-color: theme(colors.stone.950);
+
+	--color-site-bg: #f6f6f6;
+	--color-yellow: #e3c06d;
+	--color-green: #9cac76;
+	--color-blue: #96b9c7;
+	--color-purple: #eaaf9a;
+}
 
 @tailwind base;
 @tailwind components;
@@ -98,5 +112,36 @@
 		border-top-color: transparent;
 		transform: rotate(-1deg);
 		top: 0.1em;
+	}
+}
+
+h1,
+h2,
+h3 {
+	@apply mb-4;
+	font-family: 'Orelega One', serif;
+}
+
+h1 {
+	@apply text-4xl;
+	line-height: 1.25;
+}
+h2 {
+	@apply text-4xl;
+}
+h3 {
+	@apply text-2xl;
+}
+
+@media (min-width: 768px) {
+	h1 {
+		@apply text-5xl;
+		line-height: 1.25;
+	}
+	h2 {
+		@apply text-5xl;
+	}
+	h3 {
+		@apply text-3xl;
 	}
 }
