@@ -1,7 +1,9 @@
 <script lang="ts">
 	import { Button } from '$components';
-	import photoSq from '$assets/profile-square.png';
-	import photo from '$assets/profile-rect.png';
+
+	const baseImgUrl = 'https://res.cloudinary.com/dqorjojrw/image/upload/f_auto/q_auto';
+	const photoSq = 'v1685520713/Portfolio%20site/profile-square_gegc74.png';
+	const photoRect = 'v1685520718/Portfolio%20site/profile-rect_wfzjxk.png';
 </script>
 
 <article id="home">
@@ -23,9 +25,17 @@
 		<div class="lg:w-1/4">
 			<div class="cover-container">
 				<picture>
-					<source media="(min-width: 1024px)" srcset={photo} />
+					<source
+						media="(min-width: 1024px)"
+						srcset="{baseImgUrl}/w_360/{photoRect}, {baseImgUrl}/w_720/{photoRect} 2x"
+					/>
+					<source
+						media="(min-width: 768px)"
+						srcset="{baseImgUrl}/w_310/{photoSq}, {baseImgUrl}/w_620/{photoSq} 2x"
+					/>
 					<img
-						src={photoSq}
+						src="{baseImgUrl}/w_380/{photoSq}"
+						srcset="{baseImgUrl}/w_190/{photoSq}, {baseImgUrl}/w_380/{photoSq} 2x"
 						alt="Headshot of Magdaléna Kubincová"
 						class="rounded-[0.5em] relative max-w-[200px] md:max-w-xs lg:max-w-none border-5 border-current bg-[var(--color-yellow)] grayscale rotate-[5deg] hover:rotate-0 hover:grayscale-0 transition duration-300 z-10 shadow-[-5px_5px_10px_rgba(0,0,0,0.25)]"
 					/>

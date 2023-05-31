@@ -2,16 +2,17 @@
 	import { ArrowUpRight } from 'lucide-svelte';
 
 	export let item: { name: string; link: string; cover: string; desc: string };
+	export let baseImgUrl: string;
 </script>
 
 <a href={item.link} target="_blank" class="card">
 	<div class="sm:aspect-[2/1] overflow-hidden">
 		<img
-			src={item.cover}
+			srcset="{baseImgUrl}/w_130/{item.cover} 130w, {baseImgUrl}/w_210/{item.cover} 210w, {baseImgUrl}/w_300/{item.cover} 300w, {baseImgUrl}/w_400/{item.cover} 400w, {baseImgUrl}/w_600/{item.cover} 600w, {baseImgUrl}/w_800/{item.cover} 800w, {baseImgUrl}/w_1000/{item.cover} 1000w"
+			sizes="(min-width: 1225px) 400w, (min-width: 1024px) 35vw, (min-width: 640px) 50vw, 35vw"
 			alt="Homepage of {item.name} website."
+			loading="lazy"
 			class="w-full h-full object-cover"
-			width="400"
-			height="200"
 		/>
 	</div>
 
