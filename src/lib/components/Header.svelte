@@ -113,7 +113,7 @@
 
 		<div
 			id="offcanvas-menu"
-			class="fixed inset-0 bg-[var(--color-text)] -z-10 translate-x-full transition-transform duration-300"
+			class="fixed inset-0 bg-[var(--color-text)] -z-10 translate-x-full transition-transform duration-300 hidden"
 		>
 			<ul
 				class="flex flex-col text-center justify-center gap-8 text-3xl my-[54px] h-[calc(100%-108px)] overflow-auto"
@@ -188,6 +188,9 @@
 			.site-menu,
 			.contact-menu {
 				display: none;
+			}
+			#offcanvas-menu {
+				display: block;
 			}
 
 			#toggle-nav {
