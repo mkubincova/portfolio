@@ -50,9 +50,10 @@
 				<Button
 					element="a"
 					variant="solid"
-					href="/books/a-great-book.pdf"
+					href="/CV.pdf"
 					target="_blank"
 					className="mt-5"
+					download="Magdalena_Kubincova_CV"
 					><svelte:fragment slot="leftIcon"><Download role="img" aria-hidden /></svelte:fragment
 					>Dowload CV
 				</Button>
